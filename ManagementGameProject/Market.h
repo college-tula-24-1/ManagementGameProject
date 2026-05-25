@@ -9,5 +9,7 @@ class Market
 public:
 	Market();
 	int Level();
+
+	AuctionInfo Auction();
 };
 

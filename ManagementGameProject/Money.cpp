@@ -81,7 +81,7 @@ Money operator*(Money money, int count)
 
 Money operator/(Money money, int count)
 {
-	return Money(money.dollars / count, money.cents / count);
+	return Money(0, (money.dollars + money.cents * 100) / count);
 }
 
 Money operator%(Money money, int percent)
@@ -91,7 +91,7 @@ Money operator%(Money money, int percent)
 
 bool operator<(Money left, Money right)
 {
-	return left.dollars * 100 + left.cents < right.dollars * 100 + right.cents;
+	return left.dollars + left.cents * 100 < right.dollars + right.cents * 100;
 }
 
 bool operator<=(Money left, Money right)
@@ -101,7 +101,7 @@ bool operator<=(Money left, Money right)
 
 bool operator>(Money left, Money right)
 {
-	return left.dollars * 100 + left.cents > right.dollars * 100 + right.cents;
+	return left.dollars + left.cents * 100 > right.dollars + right.cents * 100;
 }
 
 bool operator>=(Money left, Money right)
@@ -111,12 +111,22 @@ bool operator>=(Money left, Money right)
 
 bool operator==(Money left, Money right)
 {
-	return left.dollars * 100 + left.cents == right.dollars * 100 + right.cents;
+	return left.dollars + left.cents * 100 == right.dollars + right.cents * 100;
 }
 
 bool operator!=(Money left, Money right)
 {
 	return !(left == right);
+}
+
+bool operator<(Money money, int number)
+{
+	return money.dollars + money.cents * 100 < number;
+}
+
+bool operator==(Money money, int number)
+{
+	return money.dollars + money.cents * 100 == number;
 }
 
 

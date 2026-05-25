@@ -1,12 +1,15 @@
 #pragma once
 #include "Money.h"
 
-class AuctionInfo
+struct AuctionPair
 {
-	int esmCount;
-	int egpCount;
+	int count = 0;
+	Money price;
+};
 
-	Money esmPrice;
-	Money egpPrice;
+struct AuctionInfo
+{
+	AuctionPair material;
+	AuctionPair product;
 };
 

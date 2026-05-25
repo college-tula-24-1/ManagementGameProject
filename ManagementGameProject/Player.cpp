@@ -13,3 +13,8 @@ Player::Player(Banker* banker, std::string name)
 	products = 2;
 	account = *(new Money(10000, 0));
 }
+
+Money Player::MonthlyExpenses()
+{
+	return Money();
+}

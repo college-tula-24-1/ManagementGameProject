@@ -41,6 +41,9 @@ public:
 	friend bool operator==(Money left, Money right);
 	friend bool operator!=(Money left, Money right);
 
+	friend bool operator<(Money money, int number);
+	friend bool operator==(Money money, int number);
+
 	std::string ToString();
 };
 

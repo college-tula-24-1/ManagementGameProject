@@ -3,6 +3,7 @@
 
 #include "Factory.h"
 #include "Credit.h"
+#include "AuctionInfo.h"
 
 class Banker;
 
@@ -23,6 +24,23 @@ class Player
 public:
 	Player(Banker* banker, std::string name = "");
 	
+	Money MonthlyExpenses();
+
+	AuctionPair MaterialRequest(AuctionPair materialPair);
+	Money MaterialResponse(int materialCount);
+
+	Money Production();
+
+	AuctionPair ProductRequest(AuctionPair productPair);
+	Money ProductResponse(int productCount);
+
+	Money CreditRate();
+
+	Money CreditRepayment();
+
+	Money CreditTake();
+
+	Money FactoryBuilding();
 
 };
 
